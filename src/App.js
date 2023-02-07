@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
+import HomePage from './Pages/HomePage';
+import DetailsPage from './Pages/DetailsPage';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1>Hello world!</h1>
+      <Routes>
+        <Route path="/" element={HomePage} />
+        <Route path="/details" element={DetailsPage} />
+      </Routes>
     </>
   );
 }
