@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = (props) => {
+const Country = (props) => {
   const {
     name,
     population,
@@ -47,7 +47,7 @@ const Card = (props) => {
   );
 };
 
-Card.propTypes = {
+Country.propTypes = {
   name: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
   continent: PropTypes.string.isRequired,
@@ -55,4 +55,4 @@ Card.propTypes = {
   flag: PropTypes.string.isRequired,
 };
 
-export default Card;
+export default Country;
