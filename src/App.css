@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #001845;
+  --secondary-color: #001233;
+  --gray-color:#979dac;
+  --white:#fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  background-color: var(--secondary-color);
+}
+
+/* home-page header section */
+header {
+  height: 74px;
+}
+
+.header-content {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 0;
+  height: 70px;
+  display: flex;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: auto;
+}
+
+nav h2 {
+  font-size: 18px;
+}
+
+nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+.home-link-icon,
+.nav-icons {
+  color: var(--gray-color);
+}
+
+.nav-icons {
+  font-size: 18px;
+}
+
+/* main section */
+main {
+  width: 93%;
+  margin: 30px auto;
+}
+
+main .search-bar {
+  background-color: var(--primary-color);
+  outline: none;
+  color: var(--gray-color);
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+main .search-bar:focus {
+  border: 1px solid var(--gray-color);
+}
+
+/* main section */
+main .card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-container .country {
+  width: 48%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.country .img-holder {
+  height: 150px;
+}
+
+.card-container .country:hover {
+  animation: shadow 0.8s linear backwards;
+}
+
+.country .img-holder img {
+  width: 100%;
+  height: 100%;
+}
+
+.country .card-body {
+  text-align: left;
+  padding: 8px;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.country .card-body p {
+  padding: 8px 0;
+}
+
+.country .card-body .lighter-text {
+  color: var(--gray-color);
+}
+
+@keyframes shadow {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 768px) {
+  /* home-page header section */
+  nav,
+  main {
+    width: 80%;
+  }
+  
+  nav h2 {
+    font-size: 25px;
+  }
+
+  /* main section */
+  main .card-container {
+    justify-content: space-between;
+  }
+
+  .card-container .country {
+    width: 190px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+}

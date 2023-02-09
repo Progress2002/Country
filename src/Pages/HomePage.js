@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
+import Home from '../Components/Home';
 
 const HomePage = (
   <>
-    <h1>
-      Hello I am home page
-    </h1>
+    <Home />
   </>
 );
 
