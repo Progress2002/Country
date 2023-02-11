@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import { FaHome, FaMicrophone } from 'react-icons/fa';
 import { IoMdSettings } from 'react-icons/io';
 import getCountries from '../redux/api';
 import SearchBar from './Search';
 import Country from './Country';
 
-const Home = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries.countries);
 
@@ -44,12 +45,8 @@ const Home = () => {
         <div className="card-container">
           {countries.map((country) => (
             <Country
-              key={country.population}
-              name={country.name.common}
-              population={country.population}
-              capital={country.capital}
-              continent={country.continents}
-              flag={country.flags.png}
+              key={uuidv4()}
+              data={country}
             />
           ))}
           ;
@@ -59,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

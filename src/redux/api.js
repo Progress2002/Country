@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const getCountries = createAsyncThunk('Countries-Of-The-World/getCountries', async () => {
   try {
-    const response = await axios.get('https://restcountries.com/v3.1/all');
+    const response = await axios.get('https://restcountries.com/v2/all');
     return response.data;
   } catch (error) {
     return error;

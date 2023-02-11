@@ -1,16 +1,18 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import HomePage from './Pages/HomePage';
-import DetailsPage from './Pages/DetailsPage';
+import DetailsPage from './Components/DetailsPage';
+import HomePage from './Components/HomePage';
 
 const App = () => (
-  <>
-    <Routes>
-      <Route path="/" element={HomePage} />
-      <Route path="/details" element={DetailsPage} />
-    </Routes>
-  </>
+  <BrowserRouter>
+    <div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
+      </Routes>
+    </div>
+  </BrowserRouter>
 );
 
 export default App;

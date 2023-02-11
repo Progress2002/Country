@@ -1,58 +1,48 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-const Country = (props) => {
-  const {
-    name,
-    population,
-    continent,
-    capital,
-    flag,
-  } = props;
+const Country = ({ data }) => {
+  const navigate = useNavigate();
+
+  const handleRoute = () => {
+    navigate(`/details/${data.name}`, { state: data });
+  };
 
   return (
-    <button id="45" type="button" className="country">
+    <button onClick={handleRoute} type="button" className="country">
       <div className="img-holder">
         <img
           className="country-flag"
           alt="country-flag"
-          src={flag}
+          src={data.flag}
         />
       </div>
       <div className="card-body">
-        <h2>{name}</h2>
+        <h2>{data.name}</h2>
         <p>
           Population :
           <span className="lighter-text">
             {' '}
-            {population}
+            {data.population}
           </span>
         </p>
         <p>
           Continent :
           <span className="lighter-text">
             {' '}
-            {continent}
+            {data.region}
           </span>
         </p>
         <p>
           Capital  :
           <span className="lighter-text">
             {' '}
-            {capital}
+            {data.capital}
           </span>
         </p>
       </div>
     </button>
   );
-};
-
-Country.propTypes = {
-  name: PropTypes.string.isRequired,
-  population: PropTypes.number.isRequired,
-  continent: PropTypes.string.isRequired,
-  capital: PropTypes.string.isRequired,
-  flag: PropTypes.string.isRequired,
 };
 
 export default Country;
