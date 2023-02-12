@@ -1,7 +1,6 @@
 import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { FaArrowLeft, FaMicrophone } from 'react-icons/fa';
-import { IoMdSettings } from 'react-icons/io';
+import { useLocation } from 'react-router-dom';
+import Header from './DetailsPageHeader';
 
 const DetailsPage = () => {
   const location = useLocation();
@@ -9,25 +8,7 @@ const DetailsPage = () => {
 
   return (
     <>
-      <header>
-        <div className="header-content">
-          <nav>
-            <h1 className="home-icon back-home-icon">
-              <Link to="/">
-                <FaArrowLeft className="home-link-icon" />
-              </Link>
-            </h1>
-            <ul>
-              <li>
-                <FaMicrophone className="nav-icons" />
-              </li>
-              <li>
-                <IoMdSettings className="nav-icons" />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <div className="details-container">
         <h2>{data.name}</h2>
         <div className="details-content">

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { FaHome, FaMicrophone } from 'react-icons/fa';
-import { IoMdSettings } from 'react-icons/io';
 import getCountries from '../redux/api';
 import Country from './Country';
+import Header from './HomePageHeader';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -30,26 +28,7 @@ const HomePage = () => {
 
   return (
     <>
-      <header>
-        <div className="header-content">
-          <nav>
-            <h1 className="home-icon">
-              <Link to="/">
-                <FaHome className="home-link-icon" />
-              </Link>
-            </h1>
-            <h2>Countries Of The World</h2>
-            <ul>
-              <li>
-                <FaMicrophone className="nav-icons" />
-              </li>
-              <li>
-                <IoMdSettings className="nav-icons" />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <main>
         <input
           className="search-bar"
