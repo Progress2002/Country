@@ -1,5 +1,7 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { FaArrowLeft, FaMicrophone } from 'react-icons/fa';
+import { IoMdSettings } from 'react-icons/io';
 
 const DetailsPage = () => {
   const location = useLocation();
@@ -7,13 +9,32 @@ const DetailsPage = () => {
 
   return (
     <>
-      <div className="container">
+      <header>
+        <div className="header-content">
+          <nav>
+            <h1 className="home-icon back-home-icon">
+              <Link to="/">
+                <FaArrowLeft className="home-link-icon" />
+              </Link>
+            </h1>
+            <ul>
+              <li>
+                <FaMicrophone className="nav-icons" />
+              </li>
+              <li>
+                <IoMdSettings className="nav-icons" />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div className="details-container">
         <h2>{data.name}</h2>
-        <div className="details">
-          <div className="details-content">
+        <div className="details-content">
+          <div className="image-container">
             <img src={data.flag} alt="Country flag" />
           </div>
-          <div className="details-content">
+          <div className="details">
             {
             data.nativeName
               ? (
@@ -60,7 +81,7 @@ const DetailsPage = () => {
               ) : ''
           }
           </div>
-          <div className="details-content">
+          <div className="details-content last-details">
             {
             data.currencies
               ? (
@@ -73,7 +94,7 @@ const DetailsPage = () => {
             {
             data.timezones
               ? (
-                <p>
+                <p className="flex">
                   Timezones:
                   {data.timezones.map((time) => <span className="details-btn" key={time}>{time}</span>)}
                 </p>
@@ -100,7 +121,7 @@ const DetailsPage = () => {
             {
             data.borders
               ? (
-                <p>
+                <p className="flex">
                   Border Countries:
                   {data.borders.map((border) => <span className="details-btn" key={border}>{border}</span>)}
                 </p>

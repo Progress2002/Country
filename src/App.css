@@ -131,6 +131,50 @@ main .card-container {
   }
 }
 
+/* Details page */
+.details-container {
+  color: var(--white);
+  width: 90%;
+  margin: auto;
+}
+
+.details-container h2 {
+  margin: 15px 10px 12px;
+}
+
+.details-container .image-container {
+  margin-bottom: 15px;
+}
+
+.details-container .image-container img {
+  width: 100%;
+  height: 270px;
+}
+
+.details-container p {
+  margin: 15px 0;
+}
+
+.details-container .details-btn {
+  background-color: #001845;
+  padding: 5px 8px;
+  margin-left: 5px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.details-container .lighter,
+.details-container .details-btn {
+  color: var(--gray-color);
+  padding-left: 5px;
+}
+
+
+
 @media (min-width: 768px) {
   /* home-page header section */
   nav,
@@ -149,10 +193,42 @@ main .card-container {
 
   .card-container .country {
     width: 190px;
-    /* height: 280px; */
     border: none;
     outline: none;
     cursor: pointer;
     margin-bottom: 10px;
+  }
+
+  .details-container {
+    width: 80%;
+    margin-top: 9%;
+  }
+
+  .details-content {
+    display: flex;
+    gap: 50px;
+  }
+
+  .details-container h2 {
+    margin: 20px 10px;
+  }
+  
+  .details-container .image-container {
+    width: 70%;
+    height: 270px;
+  }
+  
+  .details-container p {
+    margin: 15px 0;
+    height: fit-content;
+  }
+  
+  .details-container .details-btn {
+    padding: 5px 8px;
+    margin-left: 5px;
+  }
+
+  .last-details {
+    display: block;
   }
 }

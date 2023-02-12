@@ -61,19 +61,19 @@ const HomePage = () => {
         />
         <div className="card-container">
           {
-            searchItem.length ? 
-            newCountries.map((country) => (
-              <Country
-                key={uuidv4()}
-                data={country}
-              />
-            )) :
-            countries.map((country) => (
-              <Country
-                key={uuidv4()}
-                data={country}
-              />
-            ))
+            searchItem.length
+              ? newCountries.map((country) => (
+                <Country
+                  key={uuidv4()}
+                  data={country}
+                />
+              ))
+              : countries.map((country) => (
+                <Country
+                  key={uuidv4()}
+                  data={country}
+                />
+              ))
           }
         </div>
       </main>
