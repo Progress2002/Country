@@ -9,7 +9,6 @@ const fetchData = createAsyncThunk('countries/fetch-data', async () => {
   return len;
 });
 
-
 const initialState = {
   countries: 0,
   isWeatherFetched: false,
