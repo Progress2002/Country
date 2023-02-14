@@ -19,8 +19,8 @@ const DetailsPage = () => {
             {
             data.nativeName
               ? (
-                <p>
-                  Native Name:
+                <p className="list">
+                  Native Name :
                   <span className="lighter">{data.nativeName}</span>
                 </p>
               ) : ''
@@ -28,8 +28,8 @@ const DetailsPage = () => {
             {
             data.population
               ? (
-                <p>
-                  Population:
+                <p className="list">
+                  Population :
                   <span className="lighter">{data.population}</span>
                 </p>
               ) : ''
@@ -37,8 +37,8 @@ const DetailsPage = () => {
             {
             data.region
               ? (
-                <p>
-                  Region:
+                <p className="list">
+                  Region :
                   <span className="lighter">{data.region}</span>
                 </p>
               ) : ''
@@ -46,8 +46,8 @@ const DetailsPage = () => {
             {
             data.subregion
               ? (
-                <p>
-                  Sub Region:
+                <p className="list">
+                  Sub Region :
                   <span className="lighter">{data.subregion}</span>
                 </p>
               ) : ''
@@ -55,8 +55,8 @@ const DetailsPage = () => {
             {
             data.capital
               ? (
-                <p>
-                  Capital:
+                <p className="list">
+                  Capital :
                   <span className="lighter">{data.capital}</span>
                 </p>
               ) : ''
@@ -66,8 +66,8 @@ const DetailsPage = () => {
             {
             data.currencies
               ? (
-                <p>
-                  Currency:
+                <p className="list-2">
+                  Currency :
                   <span className="lighter">{data.currencies[0].name}</span>
                 </p>
               ) : ''
@@ -75,8 +75,8 @@ const DetailsPage = () => {
             {
             data.timezones
               ? (
-                <p className="flex">
-                  Timezones:
+                <p className="flex list-2">
+                  Timezones :
                   {data.timezones.map((time) => <span className="details-btn" key={time}>{time}</span>)}
                 </p>
               ) : ''
@@ -84,8 +84,8 @@ const DetailsPage = () => {
             {
             data.topLevelDomain
               ? (
-                <p>
-                  Top Level Domain:
+                <p className="list-2">
+                  Top Level Domain :
                   <span className="lighter">{data.topLevelDomain[0]}</span>
                 </p>
               ) : ''
@@ -93,8 +93,8 @@ const DetailsPage = () => {
             {
             data.languages
               ? (
-                <p>
-                  Languages:
+                <p className="list-2">
+                  Languages :
                   {data.languages.map((language) => <span className="details-btn" key={language.name}>{language.name}</span>)}
                 </p>
               ) : ''
@@ -102,8 +102,8 @@ const DetailsPage = () => {
             {
             data.borders
               ? (
-                <p className="flex">
-                  Border Countries:
+                <p className="flex list-2">
+                  Border Countries :
                   {data.borders.map((border) => <span className="details-btn" key={border}>{border}</span>)}
                 </p>
               ) : ''

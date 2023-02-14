@@ -85,16 +85,15 @@ main .card-container {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .card-container .country {
-  width: 48%;
+  width: 50%;
   min-height: 280px;
   border: none;
   outline: none;
   cursor: pointer;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   background-color: var(--primary-color);
 }
 
@@ -122,13 +121,24 @@ main .card-container {
   margin: 15px 0;
 }
 
+.details-container .list,
+.details-container .list-2 {
+  padding: 15px 8px;
+}
+
+.details-container .list:nth-child(odd),
+.details-container .list-2:nth-child(even) {
+  background-color: var(--primary-color);
+}
+
 .country .card-body p {
   padding: 8px 0;
 }
 
-.country .card-body .lighter-text {
-  color: var(--gray-color);
-}
+
+/* .country .card-body .lighter-text {
+  color: black;
+} */
 
 @keyframes shadow {
   50% {
@@ -157,7 +167,6 @@ main .card-container {
 }
 
 .details-container .details-btn {
-  background-color: #001845;
   padding: 5px 8px;
   margin-left: 5px;
 }
@@ -165,13 +174,22 @@ main .card-container {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 1px;
 }
 
 .details-container .lighter,
 .details-container .details-btn {
   color: var(--gray-color);
   padding-left: 5px;
+}
+
+.details-container p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container .lighter {
+  display: block;
 }
 
 @media (min-width: 768px) {
@@ -200,12 +218,16 @@ main .card-container {
 
   .details-container {
     width: 80%;
-    margin-top: 9%;
+    margin-top: 5%;
   }
 
   .details-content {
     display: flex;
     gap: 50px;
+  }
+
+  .details-container .details {
+    width: 50%;
   }
 
   .details-container h2 {
@@ -217,11 +239,38 @@ main .card-container {
     height: 270px;
   }
 
-  .details-container p {
+  .details-container .list:nth-child(odd),
+  .details-container .list-2:nth-child(even) {
+    background-color: inherit;
+  }
+
+  .details-container .list,
+  .details-container .list-2 {
     margin: 15px 0;
   }
 
+  .details-container p {
+    display: flex;
+    margin: 15px 0;
+    justify-content: flex-start;
+  }
+  
+  .details-container .lighter {
+    display: inline;
+  }
+
+  .country .card-body .lighter-text {
+    color: var(--gray-color);
+  }
+
+  .details-container .lighter,
   .details-container .details-btn {
+    color: var(--gray-color);
+    padding-left: 5px;
+  }
+
+  .details-container .details-btn {
+    background-color: #001845;
     padding: 5px 8px;
     margin-left: 5px;
   }
