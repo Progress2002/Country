@@ -1,38 +1,274 @@
-.App {
+:root {
+  --primary-color: #001845;
+  --secondary-color: #001233;
+  --gray-color: #979dac;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  background-color: var(--secondary-color);
+}
+
+/* home-page header section */
+header {
+  height: 74px;
+}
+
+.header-content {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 0;
+  height: 70px;
+  display: flex;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 93%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+nav h2 {
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+.home-link-icon,
+.nav-icons {
+  color: var(--gray-color);
+  cursor: pointer;
+}
+
+.nav-icons {
+  font-size: 18px;
+}
+
+/* main section */
+main {
+  width: 93%;
+  margin: 30px auto;
+}
+
+main .search-bar {
+  background-color: var(--primary-color);
+  outline: none;
+  color: var(--gray-color);
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+main .search-bar:focus {
+  border: 1px solid var(--gray-color);
+}
+
+/* main section */
+main .card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container .country {
+  width: 50%;
+  min-height: 280px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  /* margin-bottom: 15px; */
+  background-color: var(--primary-color);
+}
+
+.country .img-holder {
+  height: 150px;
+}
+
+.card-container .country:hover {
+  animation: shadow 0.8s linear backwards;
+}
+
+.country .img-holder img {
+  width: 100%;
+  height: 100%;
+}
+
+.country .card-body {
+  text-align: left;
+  padding: 8px;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.details-container .list,
+.details-container .list-2 {
+  padding: 15px 8px;
+}
+
+.details-container .list:nth-child(odd),
+.details-container .list-2:nth-child(even) {
+  background-color: var(--primary-color);
+}
+
+.details-container p {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.country .card-body p {
+  padding: 8px 0;
+}
+
+@keyframes shadow {
+  50% {
+    transform: scale(1.1);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Details page */
+.details-container {
+  color: var(--white);
+  width: 90%;
+  margin: auto;
+}
+
+.details-container h2 {
+  margin: 15px 10px 12px;
+}
+
+.details-container .image-container {
+  margin-bottom: 15px;
+}
+
+.details-container .image-container img {
+  width: 100%;
+  height: 270px;
+}
+
+.details-container .details-btn {
+  padding: 5px 8px;
+  margin-left: 5px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.details-container .lighter,
+.details-container .details-btn {
+  color: var(--gray-color);
+  padding-left: 5px;
+}
+
+.details-container .lighter {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  /* home-page header section */
+  nav,
+  main {
+    width: 80%;
+  }
+
+  nav h2 {
+    font-size: 25px;
+  }
+
+  /* main section */
+  main .card-container {
+    justify-content: space-between;
+  }
+
+  .card-container .country {
+    width: 190px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .details-container {
+    width: 80%;
+    margin-top: 5%;
+  }
+
+  .details-content {
+    display: flex;
+    gap: 50px;
+  }
+
+  .details-container .details {
+    width: 50%;
+  }
+
+  .details-container h2 {
+    margin: 20px 10px;
+  }
+
+  .details-container .image-container {
+    width: 70%;
+    height: 270px;
+  }
+
+  .details-container .list,
+  .details-container .list-2 {
+    margin: 15px 0;
+  }
+
+  .details-container .list:nth-child(odd),
+  .details-container .list-2:nth-child(even) {
+    background-color: inherit;
+  }
+
+  .details-container p {
+    display: flex;
+    margin: 15px 0;
+    justify-content: flex-start;
+  }
+
+  .details-container .lighter {
+    display: inline;
+  }
+
+  .country .card-body .lighter-text {
+    color: var(--gray-color);
+  }
+
+  .details-container .lighter,
+  .details-container .details-btn {
+    color: var(--gray-color);
+    padding-left: 5px;
+  }
+
+  .details-container .details-btn {
+    background-color: #001845;
+    padding: 5px 8px;
+    margin-left: 5px;
+  }
+
+  .last-details {
+    display: block;
   }
 }
