@@ -53,6 +53,7 @@ nav ul {
 .home-link-icon,
 .nav-icons {
   color: var(--gray-color);
+  cursor: pointer;
 }
 
 .nav-icons {
