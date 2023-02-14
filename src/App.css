@@ -138,11 +138,6 @@ main .card-container {
   padding: 8px 0;
 }
 
-
-/* .country .card-body .lighter-text {
-  color: black;
-} */
-
 @keyframes shadow {
   50% {
     transform: scale(1.1);
